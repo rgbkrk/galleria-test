@@ -34,10 +34,6 @@ process.on("unhandledRejection", up => {
 
   await page.goto("https://nteract.io", { waitUntil: "domcontentloaded" });
 
-  await page.evaluate(() => {
-    window.scrollBy(0, window.innerHeight);
-  });
-
   await sleep(1000);
 
   await page.screenshot({ path: "screenshots/nteractio.png" });
