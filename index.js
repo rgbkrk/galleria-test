@@ -30,7 +30,7 @@ process.on("unhandledRejection", up => {
 
   await page.goto("https://nteract.io", { waitUntil: "domcontentloaded" });
 
-  await page.screenshot({ path: "screenshots/screenie.png" });
+  await page.screenshot({ path: "screenshots/nteractio.png" });
 
   await browser.close();
 })();
