@@ -2,6 +2,10 @@ const puppeteer = require("puppeteer");
 
 const path = require("path");
 
+function sleep(duration) {
+  return new Promise(resolve => setTimeout(resolve, duration));
+}
+
 // Make sure that the async/await code below makes node crash
 process.on("unhandledRejection", up => {
   throw up;
@@ -29,6 +33,12 @@ process.on("unhandledRejection", up => {
   });
 
   await page.goto("https://nteract.io", { waitUntil: "domcontentloaded" });
+
+  await page.evaluate(() => {
+    window.scrollBy(0, window.innerHeight);
+  });
+
+  await sleep(1000);
 
   await page.screenshot({ path: "screenshots/nteractio.png" });
 
