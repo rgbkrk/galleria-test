@@ -36,7 +36,7 @@ process.on("unhandledRejection", up => {
 
   await sleep(1000);
 
-  await page.screenshot({ path: "screenshots/kernels.png" });
+  await page.screenshot({ path: "screenshots/nteract-kernels.png" });
 
   await browser.close();
 })();
