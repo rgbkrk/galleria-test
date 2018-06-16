@@ -32,7 +32,7 @@ process.on("unhandledRejection", up => {
     process.exit(2);
   });
 
-  await page.goto("https://nteract.io", { waitUntil: "domcontentloaded" });
+  await page.goto("https://nteract.io/kernels", { waitUntil: "domcontentloaded" });
 
   await sleep(1000);
 
